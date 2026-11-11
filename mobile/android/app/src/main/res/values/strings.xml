@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string translatable="false" name="app_name">120mm</string>
+    <string translatable="false" name="title_activity_main">120mm</string>
+    <string translatable="false" name="package_name">local.x1.journal</string>
+    <string translatable="false" name="custom_url_scheme">local.x1.journal</string>
+</resources>

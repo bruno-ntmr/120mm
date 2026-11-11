@@ -1,0 +1,31 @@
+/* Android follows the system setting. Desktop web keeps its existing dark theme. */
+@media(prefers-color-scheme:light){
+  :root.android-app{color-scheme:light;--bg:#f5f6fa;--surface:#ffffff;--line:#dfe3ed;--text:#202436;--muted:#636d83;--accent:#7554cf;--chart-grid:#e5e8f0;--chart-tick:#68728a;--chart-upper:#7554cf;--chart-lower:#16867b;--chart-point-border:#fff}
+  .android-app button,.android-app .file-button{background:#eef0f7;color:var(--text)}
+  .android-app button:hover,.android-app .file-button:hover{background:#e5e8f3}
+  .android-app .primary{background:var(--accent);color:#fff}.android-app .primary:hover{background:#6543bf}
+  .android-app .icon-button,.android-app .text-button,.android-app .menu-choice{background:transparent}
+  .android-app .text-button{color:var(--accent)}
+  .android-app .menu-choice:hover:not(:disabled){background:#eef0f7;border-color:#dfe3ed}
+  .android-app .menu-choice:disabled:hover{background:transparent}
+  .android-app .latest{background:radial-gradient(ellipse at 20% 100%,#7554cf0b,transparent 80%),var(--surface)}
+  .android-app .slash,.android-app .result-pressure>span{color:#7a7792}
+  .android-app .pulse-value svg{stroke:#b65379}
+  .android-app .legend{color:var(--chart-upper)}.android-app .legend span+span{color:var(--chart-lower)}
+  .android-app th{background:#f0f2f8}.android-app td{border-top-color:#e8ebf3}.android-app td:nth-child(4){color:#59637b}
+  .android-app select{background:#f0f2f8;color:var(--text)}
+  .android-app .flag-icon.inactive{color:#8d95a6}.android-app .flag-icon.active{color:#a96622}.android-app .flag-icon.cuff-status.active{color:#59647b}
+  .android-app .flag-icon:after{background:#fff;border-color:#d7dcea;box-shadow:0 8px 24px #2024361a}
+  .android-app .settings{background:#fff;box-shadow:0 16px 48px #20243626}
+  .android-app .battery{color:#59637b}.android-app .battery.low{color:#a96622}
+  .android-app .badge.connected:before{background:#16867b}
+  .android-app .notice{background:#eceff7;color:#59637b}.android-app .notice.error{background:#fff0ea;color:#a1462b}
+  .android-app .demo-banner{background:#fff1d3}.android-app summary{color:#59637b}
+  .android-app footer{color:#68728a}
+  .android-app #live-overlay{background:#29304845}
+  .android-app #live-panel{background:radial-gradient(ellipse at top,#7554cf0d,transparent 65%),#fff;border-color:#dfe3ed;box-shadow:0 24px 90px #20243633}
+  .android-app .chart-tooltip{background:#fffffff5;border-color:#d7dcea;box-shadow:0 10px 30px #20243620}
+  .android-app .chart-tooltip-date,.android-app .chart-tooltip-pulse{color:#636d83}
+  .android-app .sync-progress-label{color:#59637b}.android-app .sync-spinner{border-color:#7554cf30;border-top-color:var(--accent)}
+  .android-app .sync-progress progress,.android-app .sync-progress progress::-webkit-progress-bar{background:#e5e8f3}
+}

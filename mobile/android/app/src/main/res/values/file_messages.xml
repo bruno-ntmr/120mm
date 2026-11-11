@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="file_invalid">Invalid file</string>
+    <string name="file_not_selected">No file selected</string>
+    <string name="file_unavailable">File unavailable</string>
+    <string name="file_save_failed">Could not save file</string>
+</resources>

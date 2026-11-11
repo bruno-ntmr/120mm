@@ -1,0 +1,22 @@
+{
+  "appId": "local.x1.journal",
+  "appName": "120mm",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false,
+    "webContentsDebuggingEnabled": false
+  },
+  "plugins": {
+    "BluetoothLe": {
+      "displayStrings": {
+        "scanning": "Scanning…",
+        "cancel": "Cancel",
+        "availableDevices": "Select a monitor",
+        "noDeviceFound": "No monitor found"
+      }
+    },
+    "SystemBars": {
+      "style": "DEFAULT"
+    }
+  }
+}
