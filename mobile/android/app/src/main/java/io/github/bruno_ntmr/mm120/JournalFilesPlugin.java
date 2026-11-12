@@ -1,4 +1,4 @@
-package local.x1.journal;
+package io.github.bruno_ntmr.mm120;
 
 import android.app.Activity;
 import android.content.Intent;

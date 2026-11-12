@@ -16,6 +16,11 @@ Android-наблюдение работает при открытом прило
 
 ## Разработка
 
+Android package name: `io.github.bruno_ntmr.mm120`.
+
+Новый идентификатор отличается от GitHub-релиза 0.2.2 (`local.x1.journal`):
+для переноса истории экспортируйте JSON в старом приложении и импортируйте в новом.
+
 Нужны Node.js 22, Java 21 и Android SDK с `platforms;android-36` и `build-tools;36.0.0`.
 
 ```sh

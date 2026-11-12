@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "local.x1.journal"
+    namespace = "io.github.bruno_ntmr.mm120"
     buildToolsVersion "36.0.0"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "local.x1.journal"
+        applicationId "io.github.bruno_ntmr.mm120"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 11

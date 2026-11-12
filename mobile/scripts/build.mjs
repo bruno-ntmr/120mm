@@ -6,6 +6,7 @@ html=html.replace('<html lang="ru" class="first-run">','<html lang="ru" class="f
 html=html.replace(/src="app\.mjs[^\"]*"/,'src="app.js"').replace(/href="style\.css[^\"]*"/,'href="style.css"').replace('width=device-width,initial-scale=1','width=device-width,initial-scale=1,viewport-fit=cover');
 await writeFile('www/index.html',html);
 await copyFile('../web/dist/style.css','www/style.css');
+await copyFile('../web/dist/privacy.html','www/privacy.html');
 await writeFile('www/style.css',(await readFile('www/style.css','utf8'))+'\n.android-app main{padding-top:calc(20px + var(--safe-area-inset-top, env(safe-area-inset-top)));padding-bottom:calc(24px + var(--safe-area-inset-bottom, env(safe-area-inset-bottom)))}.android-app #live-overlay{padding-bottom:calc(12px + var(--safe-area-inset-bottom, env(safe-area-inset-bottom)))}.android-app body{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}\n');
 await writeFile('www/style.css',(await readFile('www/style.css','utf8'))+'\n'+await readFile('src/theme.css','utf8')+'\n'+await readFile('src/device-picker.css','utf8'));
 await build({entryPoints:['src/main.mjs'],bundle:true,format:'esm',target:'chrome100',outfile:'www/app.js',minify:false,sourcemap:false});

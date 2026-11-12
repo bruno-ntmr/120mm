@@ -1,5 +1,7 @@
 // Russian source messages are stable translation keys. Keep placeholders in both languages.
 export const english = {
+  "Конфиденциальность": "Privacy policy",
+  "Политика конфиденциальности": "Privacy policy",
   ", измерений: ": ", measurements: ",
   "120mm — журнал давления": "120mm — blood pressure journal",
   "Bluetooth-соединение": "Bluetooth connection",

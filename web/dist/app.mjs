@@ -9,6 +9,7 @@ import {Journal,importHistory} from './store.mjs';
 localizeMarkup(document);
 const $=id=>document.getElementById(id);
 function closeSettings(){$('settings').hidden=true;$('settings-toggle').setAttribute('aria-expanded','false');}
+$('privacy-open').onclick=()=>{closeSettings();$('privacy-frame').src='privacy.html#'+locale;$('privacy-dialog').showModal();};
 $('settings-toggle').onclick=()=>{const open=$('settings').hidden;$('settings').hidden=!open;$('settings-toggle').setAttribute('aria-expanded',String(open));};
 document.addEventListener('click',e=>{if(!e.target.closest('#settings')&&!e.target.closest('#settings-toggle'))closeSettings();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSettings();});
@@ -71,7 +72,7 @@ function render(){
   const firstRun=!demo&&!device&&!localStorage.getItem('x1g-device-id')&&!records.length;
   document.documentElement.classList.toggle('first-run',firstRun);
   $('overview-data').hidden=firstRun;$('history').hidden=firstRun;
-  $('settings-toggle').hidden=firstRun;
+  $('settings-toggle').hidden=false;
   if(firstRun)closeSettings();
   const sources=[...new Set(records.map(r=>r.device))];
   if(!sources.includes(selectedSource))selectedSource=sources.at(-1)||'';
