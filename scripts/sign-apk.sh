@@ -24,3 +24,10 @@ apk="mobile/releases/120mm-${RELEASE_TAG#v}.apk"
 "$build_tools/apksigner" verify --verbose "$apk"
 "$build_tools/zipalign" -c -p 4 "$apk"
 (cd mobile/releases && sha256sum "$(basename "$apk")" > "$(basename "$apk").sha256")
+
+# App Bundles use JAR signing, not apksigner.
+aab="mobile/releases/120mm-${RELEASE_TAG#v}.aab"
+cp mobile/android/app/build/outputs/bundle/release/app-release.aab "$aab"
+jarsigner -keystore "$SIGNING_KEY_FILE" -storepass:env ANDROID_KEYSTORE_PASSWORD -keypass:env ANDROID_KEY_PASSWORD -sigalg SHA256withRSA -digestalg SHA-256 "$aab" "$ANDROID_KEY_ALIAS"
+jarsigner -verify -strict -keystore "$SIGNING_KEY_FILE" -storepass:env ANDROID_KEYSTORE_PASSWORD "$aab"
+(cd mobile/releases && sha256sum "$(basename "$aab")" > "$(basename "$aab").sha256")

@@ -56,12 +56,13 @@ git tag -a v0.3.0 -m 'Prepare 0.3.0'
 git push origin v0.3.0
 ```
 
-Workflow `Release APK`:
+Workflow `Release Android`:
 - проверяет точное совпадение тега и файлов версий, увеличение versionCode относительно других релизных тегов;
 - устанавливает зависимости по lockfile, запускает тесты;
-- собирает общие assets, выполняет assembleRelease и lintRelease;
+- собирает общие assets, выполняет assembleRelease, bundleRelease и lintRelease;
 - подписывает APK постоянным ключом, проверяет подпись и zip alignment;
-- прикладывает APK и SHA-256 к черновику релиза.
+- подписывает AAB тем же ключом через jarsigner и проверяет подпись;
+- прикладывает APK, AAB и SHA-256 к черновику релиза.
 
 Установите APK из черновика и проверьте на реальном приборе. Затем вручную
 опубликуйте Release. Простой push изменений версии без тега APK не выпускает.

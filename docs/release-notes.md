@@ -1,15 +1,16 @@
-First public release of **120mm**, a local blood pressure journal for Android.
+120mm 0.2.3 — Android release prepared for Google Play.
 
-- Bluetooth history sync with incremental downloads and automatic reconnection.
-- Live measurement display and automatic history refresh after completion.
-- Separate profiles for family members, charts, and day/week/month navigation.
-- Russian and English UI selected from the system language; light and dark themes.
-- JSON backup/import and CSV export. No account or cloud service required.
+- Permanent application ID: `biz.babka.mm120`.
+- Signed APK for direct installation and signed AAB for Google Play, built from the same source.
+- Bilingual privacy policy available in the app, including before adding a device.
+- Fixed the 120mm name on narrow screens.
 
-**Supported device:** Omron X1-G with firmware SI.W03.01.00. Other models are not supported yet. Live monitoring requires the app to remain open. This is an independent project, not an official manufacturer app.
+**Download:** `120mm-0.2.3.apk` for installation on Android 7.0 or later. The `.aab` file is intended for Play Console, not direct installation. SHA-256 checksums are provided for both files.
 
-**Install:** download `120mm-0.2.2.apk`. Android 7.0 or later and Bluetooth LE are required. The `.sha256` attachment contains its checksum.
+**Moving from 0.2.2 or a development build:** export your journal as JSON first. The application ID has changed, so this release installs as a separate app and does not automatically inherit the old journal. Import the JSON archive into the new app and verify your data before removing the old one.
 
-**Moving from a development APK:** export your JSON backup first. This release uses a permanent release key, so Android will not install it over a debug-signed build. After backing up, uninstall the development build, install this APK, and import your archive. Future releases will use the same signing key.
+**Supported device:** Omron X1-G with firmware SI.W03.01.00. Other models and firmware versions are not supported. Bluetooth LE is required; live measurement monitoring requires the app to remain open. This is an independent project, not an official manufacturer app.
 
-The protocol was previously checked with a physical X1-G. This release is built, tested, linted and signed by GitHub Actions; the resulting GitHub APK has not yet been tested on a physical Android phone.
+No account or developer-operated cloud synchronization is required. Privacy policy: https://bruno-ntmr.github.io/120mm/
+
+GitHub Actions runs tests, Android lint, release builds and signature verification. This exact release has not yet been tested on a physical Android phone.

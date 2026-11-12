@@ -1,4 +1,4 @@
-name: Release APK
+name: Release Android
 on:
   push:
     tags: ['v*']
@@ -43,15 +43,15 @@ jobs:
         run: npm run sync --prefix mobile
       - name: Build and lint release
         working-directory: mobile/android
-        run: ./gradlew --no-daemon :app:assembleRelease :app:lintRelease
-      - name: Sign APK
+        run: ./gradlew --no-daemon :app:assembleRelease :app:bundleRelease :app:lintRelease
+      - name: Sign APK and AAB
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: bash scripts/sign-apk.sh
-      - name: Attach APK to a draft release
+      - name: Attach APK and AAB to a draft release
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
@@ -61,4 +61,4 @@ jobs:
           else
             gh release create "$RELEASE_TAG" --verify-tag --draft --title "120mm ${RELEASE_TAG#v}" --notes-file docs/release-notes.md
           fi
-          gh release upload "$RELEASE_TAG" mobile/releases/*.apk mobile/releases/*.sha256 --clobber
+          gh release upload "$RELEASE_TAG" mobile/releases/*.apk mobile/releases/*.aab mobile/releases/*.sha256 --clobber
