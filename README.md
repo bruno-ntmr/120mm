@@ -16,7 +16,7 @@ Android-наблюдение работает при открытом прило
 
 ## Разработка
 
-Android package name: `io.github.bruno_ntmr.mm120`.
+Android package name: `biz.babka.mm120`.
 
 Новый идентификатор отличается от GitHub-релиза 0.2.2 (`local.x1.journal`):
 для переноса истории экспортируйте JSON в старом приложении и импортируйте в новом.

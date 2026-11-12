@@ -1,4 +1,4 @@
-package io.github.bruno_ntmr.mm120;
+package biz.babka.mm120;
 
 import android.os.Bundle;
 import android.content.res.Configuration;
